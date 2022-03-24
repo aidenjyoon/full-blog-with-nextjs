@@ -1,5 +1,4 @@
-import Hero from "../components/home-page/Hero";
-import FeaturedPosts from "../components/home-page/FeaturedPosts";
+import AllPosts from "../../components/posts/AllPosts";
 
 const DUMMY_POSTS = [
   {
@@ -36,13 +35,12 @@ const DUMMY_POSTS = [
   },
 ];
 
-const HomePage = () => {
+const AllPostPage = (props) => {
   return (
     <>
-      <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS} />
+      <AllPosts posts={DUMMY_POSTS} />
     </>
   );
 };
 
-export default HomePage;
+export default AllPostPage;
