@@ -29,7 +29,7 @@ const PostItem = (props) => {
             />
           </div>
           <div>
-            <h3>TITLE</h3>
+            <h3>{title}</h3>
             <time>{formattedDate}</time>
             <p>{excerpt}</p>
           </div>
