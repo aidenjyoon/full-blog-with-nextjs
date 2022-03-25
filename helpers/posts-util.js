@@ -3,7 +3,7 @@ import path from "path";
 
 import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), "content/posts");
 
 const getPostData = (fileName) => {
   const filePath = path.join(postsDirectory, fileName);
@@ -37,10 +37,11 @@ const getAllPosts = () => {
 
 const getFeaturedPosts = () => {
   const allPosts = getAllPosts();
+  console.log(allPosts);
 
   const featuredPosts = allPosts.filter((post) => post.isFeatured);
 
   return featuredPosts;
 };
 
-export { getPostData, getAllPosts, getFeaturedPosts };
+export { getAllPosts, getFeaturedPosts };
