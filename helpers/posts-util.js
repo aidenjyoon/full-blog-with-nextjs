@@ -5,6 +5,10 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
+const getPostsFiles = () => {
+  return fs.readdirSync(postsDirectory);
+};
+
 const getPostData = (fileIdentifier) => {
   const postSlug = fileIdentifier.replace(/\.md$/, ""); // removes the file extension
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
@@ -21,7 +25,7 @@ const getPostData = (fileIdentifier) => {
 };
 
 const getAllPosts = () => {
-  const postFiles = fs.readdirSync(postsDirectory);
+  const postFiles = getPostsFiles();
 
   const allPosts = postFiles.map((postFile) => {
     return getPostData(postFile);
@@ -36,11 +40,24 @@ const getAllPosts = () => {
 
 const getFeaturedPosts = () => {
   const allPosts = getAllPosts();
-  console.log(allPosts);
 
   const featuredPosts = allPosts.filter((post) => post.isFeatured);
 
   return featuredPosts;
 };
 
-export { getPostData, getAllPosts, getFeaturedPosts };
+// no extension
+const getFeaturedPostsFiles = () => {
+  const featuredPosts = getFeaturedPosts();
+  const featuredSlugs = featuredPosts.map((post) => post["slug"]);
+
+  return featuredSlugs;
+};
+
+export {
+  getPostsFiles,
+  getFeaturedPostsFiles,
+  getPostData,
+  getAllPosts,
+  getFeaturedPosts,
+};
