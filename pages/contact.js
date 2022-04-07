@@ -1,6 +1,6 @@
 import ContactForm from "../components/contact/ContactForm";
 
-const ContactPage = () => {
+const ContactPage = (props) => {
   return (
     <>
       <ContactForm />
@@ -8,4 +8,7 @@ const ContactPage = () => {
   );
 };
 
+// const getServerSideProps = () => {};
+
+// export { getServerSideProps };
 export default ContactPage;
