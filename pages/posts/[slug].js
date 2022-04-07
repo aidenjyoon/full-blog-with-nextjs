@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import PostContent from "../../components/posts/post-detail/PostContent";
 import {
   getFeaturedPostsFiles,
@@ -10,6 +12,10 @@ const PostDetailPage = (props) => {
 
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="desciption" content={post.excerpt} />
+      </Head>
       <PostContent post={post} />
     </>
   );
