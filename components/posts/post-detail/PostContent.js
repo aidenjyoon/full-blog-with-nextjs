@@ -11,6 +11,7 @@ const PostContent = (props) => {
 
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
+  // custom html components for ReactMarkdown
   const customComponents = {
     // // to get rid of warnings caused by having <div>s in <p>
     // img(image) {
@@ -49,11 +50,9 @@ const PostContent = (props) => {
       const language = className.split("-")[1]; // className is something like language-js => We need the "js" part here
 
       return (
-        <SyntaxHighlighter
-          style={atomDark}
-          language={language}
-          children={children}
-        />
+        <SyntaxHighlighter style={atomDark} language={language}>
+          {children}
+        </SyntaxHighlighter>
       );
     },
   };
