@@ -4,6 +4,14 @@
 // };
 
 module.exports = {
+  // setting up environment variables
+  env: {
+    mongodb_username: "aiden",
+    mongodb_password: "mpKZGI6SibJ2JSMy",
+    mongodb_clustername: "cluster0",
+    mongodb_database: "blog-contact",
+  },
+
   future: {
     webpack5: true, // by default, if you customize webpack config, they switch back to version 4.
     // Looks like backward compatibility approach.

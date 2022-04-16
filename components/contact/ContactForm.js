@@ -31,7 +31,7 @@ const ContactForm = () => {
       const timer = setTimeout(() => {
         setRequestStatus(null);
         setRequestErrorMessage(null);
-      }, 1000);
+      }, 2000);
     }
 
     return () => clearTimeout(timer);
